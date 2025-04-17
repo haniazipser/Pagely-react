@@ -1,0 +1,25 @@
+
+.quote{
+    background-color: #f6f5f0;
+    color: black;
+    margin: 100px 0px 100px 0px !important;
+    padding: 100px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .quote-no-margin{
+    background-color: #f6f5f0;
+    color: black;
+    padding: 100px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  .quote-inside{
+    border: 2px solid #b4b3ab !important;
+    margin: auto;
+    padding: 100px;
+  }

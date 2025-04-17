@@ -1,0 +1,42 @@
+
+.circle{
+    width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: hsl(43, 24%, 83%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:10px auto 10px auto;
+  }
+  
+  .circle-big{
+      width: 30px;
+      height: 300px;
+      border-radius: 50%;
+      background-color:  #b4b3ab ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top:20%;
+  }
+
+  
+.book{
+    min-height: 160px;
+    max-width: 250px;
+  }
+  
+  .book-short{
+    height: 100px;
+  
+  }
+
+  .read-button{
+    text-decoration: none;
+    border-radius: 30px;
+    background-color: #692125;
+    color: white;
+    padding: 10px 30px;
+  }

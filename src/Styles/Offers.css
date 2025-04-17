@@ -1,0 +1,142 @@
+
+.details-wrapper {
+    padding: 2em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .details-company {
+    color:black;
+    font-size: 0.8rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+  }
+  
+  .details-product-name {
+    color:black;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0.6em 0;
+  }
+  
+  .details-description {
+    margin-bottom: 1em;
+  }
+  
+  .price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .add-to-cart {
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 1.5em;
+    padding: 12px;
+    width: 200px;
+  }
+  
+  .add-to-cart-small {
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px;
+    width: 200px;
+    line-height: 1rem;
+  }
+  
+  .add-to-cart img {
+    margin-right: 10px;
+  }
+  
+  .add-to-cart:hover,
+  .add-to-cart:active {
+    flex-grow: 1px;
+  }
+  
+  .underline{
+    padding:15px;
+    border-bottom: 3px solid  hsl(43, 24%, 83%);
+    text-align: left;
+  }
+  
+  .underline-active{
+    padding:15px;
+    border-bottom: 3px solid black;
+    text-align: left;
+  }
+  
+  .switch{
+    display: flex;
+    margin:10px;
+  }
+  
+  .expandable-description{
+    min-height:280px;
+  }
+  
+  .products-cart{
+    width: 900px;
+    border: 1px solid #b4b3ab;
+    border-radius: 15px;
+    padding:20px;
+    margin:20px;
+  }
+  
+  .cart-item{
+    border-top: 1px solid #b4b3ab;
+   padding:25px;
+  }
+  
+  .cart-heading{
+    padding: 30px;
+  }
+  
+  .order-total{
+    border: 1px solid #b4b3ab;
+    border-radius: 15px;
+    padding:20px;
+    padding-left: 25px;
+    margin:20px;
+    height:fit-content;
+  }
+  
+  .order-total-black{
+    border: 1px solid #b4b3ab;
+    border-radius: 15px;
+    margin:20px;
+    height:fit-content;
+    padding: 0px !important;
+  }
+  .black-heading{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: black;
+    padding: 10px;
+    color:white;
+    margin-bottom: 10px;
+  }
+
+  
+.offer{
+    border: 1px solid grey;
+    
+    margin:10px;
+  
+    padding: 10px;
+  
+  }
+  
+  

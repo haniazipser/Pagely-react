@@ -1,0 +1,28 @@
+
+
+.sidebar {
+    width: 0;
+    height: 100vh;
+    background: black;
+    color: white;
+    overflow: hidden;
+    position: fixed;
+    right: -100%;
+    z-index: 1;
+    top:0;
+    transition: 850ms;
+    box-shadow:-19px 0px 13px -16px rgba(0, 0, 0, 0.2);
+    margin:0 !important;
+  }
+  
+  .sidebar.open {
+    right:0;
+    width: 270px;
+    transition: 350ms;
+  }
+  
+  .sidebar-content{
+    position: sticky;
+    top:120px;
+  }
+  

@@ -1,0 +1,60 @@
+
+.logo{
+    width: auto;
+    height: 90px;
+    margin: 10px 30px 0px 0px;
+  }
+
+  
+.nav-item{
+    height: 100%;
+    text-align: center;
+    vertical-align:bottom;
+    margin-right: 35px;
+   
+  }
+  
+  .profile {
+    color:black !important;
+  }
+  
+  .profile-active {
+    color:#692125 !important;
+  }
+  
+  .cart {
+    margin-top:5px;
+    color:black !important;
+  }
+  
+  .cart-active {
+    color:#692125 !important;
+  }
+  
+  .my-navbar.active {
+    background-color: #692125;
+    padding-top: 60px !important;
+    color:#fcfdef !important;
+  }
+
+  
+.navbar-collapse{
+    height: 100px !important;
+  }
+
+  
+.navbar-nav{
+    height: 100%;
+  }
+  
+.my-navbar{
+    height:100%;
+    padding-top: 60px !important;
+    color: black !important;
+  }
+
+  
+
+.navbar-nav{
+    height: 100%;
+  }
