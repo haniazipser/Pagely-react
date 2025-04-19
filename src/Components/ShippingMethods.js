@@ -18,7 +18,7 @@ export default function ShippingMethods(){
     }
 
     useEffect(() => {
-      axios.get('http://localhost:8080/api/client/purchase/shipping/1', {withCredentials: true})
+      axios.get('http://localhost:8080/api/client/purchase/shipping', {withCredentials: true})
       .then(response => {
           console.log(response.data)
           setMethods(response.data)

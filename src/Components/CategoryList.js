@@ -2,7 +2,30 @@ import React , { useState } from "react";
 import { useCollapse } from "react-collapsed";
 import '../Styles/CategorySidebar.css';
 
-export default function CategoryList({ categories, onCategorySelect }) {
+export default function CategoryList({categories, onCategorySelect}){
+  return(
+    <div class="d-flex flex-column flex-shrink-0 p-3 category-sidebar" >
+        <ul class="list-group list-group-flush">
+        <li class = "list-group-item link" key={-1} onClick={(event) => {
+                    event.stopPropagation(); 
+                    onCategorySelect(null);
+                }}>All</li>
+        {categories !== null
+            ? categories.map((category) => (
+                <li class = "list-group-item" key={category.id} onClick={(event) => {
+                    event.stopPropagation(); 
+                    onCategorySelect(category);
+                }}>
+                <CategoryItem category={category} onCategorySelect={onCategorySelect} />
+                </li>
+            ))
+            : null}
+        </ul>
+    </div>
+  )
+}
+
+function CategoryList1({ categories, onCategorySelect }) {
 
   return (
     <div class="d-flex flex-column flex-shrink-0 p-3 category-sidebar" >
@@ -28,7 +51,7 @@ function CategoryItem({ category, onCategorySelect }) {
     <div>
       <div role="button" 
       {...getToggleProps()}>
-        {category.categoryName}
+        <span class="link">{category.categoryName}</span>
 
         {isExpanded ? ( 
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up mx-2" viewBox="0 0 16 16">
@@ -39,7 +62,7 @@ function CategoryItem({ category, onCategorySelect }) {
         </svg> )}
       </div>
       {category.childCategories.length > 0 ? (
-            <section {...getCollapseProps()}><CategoryList categories = {category.childCategories} onCategorySelect={onCategorySelect}/></section>
+            <section {...getCollapseProps()}><CategoryList1 categories = {category.childCategories} onCategorySelect={onCategorySelect}/></section>
       ) : (
         null
 

@@ -18,8 +18,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from 'react';
 import OffersByIsbn from './Components/OffersByIsbn';
 import Registration from './Components/Registration';
-
-
+import { UserContext, UserProvider } from './context/user';
+import LoginPage from './Components/LoginPage';
 
 function App() {
   const [expanded, setExpanded] = useState(false);
@@ -31,8 +31,10 @@ function App() {
 
   return (
    
-    <CartProvider>
+    
         <BrowserRouter>
+        <UserProvider>
+        <CartProvider>
         <Navbar onProfileClick={handleProfile}/>
         <Profile expanded={expanded}/>
         <ToastContainer 
@@ -46,7 +48,7 @@ function App() {
           <Route path='/offers' element={<Offers/>}/>
           <Route path='/offersByIsbn' element={<OffersByIsbn/>}/>
           <Route path='/books' element={<Books/>}/>
-          {/*<Route path='/profile' element={<Profile/>}/>*/}
+          <Route path='/profile' element={<Profile/>}/>
           <Route path='/categories' element={<Categories/>}/>
           <Route path='/cart' element={<CartContent/>}/>
           <Route path='/books/:id' element={<BookDetails/>}/>
@@ -54,8 +56,9 @@ function App() {
           <Route path='/checkout' element={<CheckOut/>}/>
           <Route path='/register' element={<Registration/>}/>
         </Routes>
+        </CartProvider>
+        </UserProvider>
         </BrowserRouter>
-    </CartProvider>
   );
 }
 

@@ -1,21 +1,25 @@
 import { createContext, useState, useEffect } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [order, setOrder] = useState(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
-        axios.get("http://localhost:8080/api/client/purchase/1", {withCredentials: true})
-            .then(response => setOrder(response.data))
-            .catch(error => console.error("Error fetching cart:", error));
-    }, []);
+      axios.get("http://localhost:8080/api/client/purchase/myOrder", {withCredentials: true})
+          .then(response => setOrder(response.data))
+          .catch(error => {
+            console.log("error fetching cart")
+            }
+      );
+  }, []);
 
     const addToCart = (offer) => {
         console.log("add" + offer.id);
-        axios.post(`http://localhost:8080/api/client/purchase/addOffer/${offer.id}/1`, {withCredentials: true})/*WSZYSTKO NA KLIENTA 1 pOPRAWIC!!!! */
-            .then(response => { console.log(response.data);
+        axios.get(`http://localhost:8080/api/client/purchase/addOffer/${offer.id}`, {withCredentials: true})/*WSZYSTKO NA KLIENTA 1 pOPRAWIC!!!! */
+            .then(response => { console.log("przyszlo + "+response.data);
                 setOrder(response.data)})
             .catch(error => console.error("Error adding to cart:", error));
         
@@ -36,10 +40,10 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = (itemId) => {
         if (!order) return;
 
-        axios.delete(`http://localhost:8080/api/client/purchase/deleteOffer/${itemId}/1`, {withCredentials: true})
+        axios.delete(`http://localhost:8080/api/client/purchase/deleteOffer/${itemId}`, {withCredentials: true})
         .then(() => {
           // Re-fetch the updated cart
-          axios.get(`http://localhost:8080/api/client/purchase/1`, {withCredentials: true})
+          axios.get(`http://localhost:8080/api/client/purchase/myOrder`, {withCredentials: true})
               .then(response => setOrder(response.data))
               .catch(error => console.error("Error fetching updated cart:", error));
         })
@@ -57,15 +61,17 @@ export const CartProvider = ({ children }) => {
       if (!order) return;
       console.log(shippingId);
 
-      axios.put(`http://localhost:8080/api/client/purchase/addShipping/1`, shippingId, {withCredentials: true})
+      axios.post("http://localhost:8080/api/client/purchase/addShipping", shippingId, {withCredentials: true})
       .then(() => {
         // Re-fetch the updated cart
-        axios.get(`http://localhost:8080/api/client/purchase/1`)
-            .then(response => setOrder(prevOrder => ({
+        axios.get(`http://localhost:8080/api/client/purchase/myOrder`, {withCredentials: true})
+            .then(response => {
+              console.log(response.data);
+              setOrder(prevOrder => ({
               ...prevOrder, 
               orderTotal: response.data.orderTotal,
               shippingMethod: response.data.shippingMethod
-          })))
+          }))})
             .catch(error => console.error("Error fetching updated cart:", error));
       })
     .catch(error => console.error("Error adding shipping method:", error));

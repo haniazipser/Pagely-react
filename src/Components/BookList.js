@@ -42,20 +42,23 @@ export default function BookList({ selectedCategory}) {
             <div class="container booklist">
                 <h1>All books </h1>
                 <hr></hr>
-                <div class="row">
+                <div class="mt-5 row">
                     {books !== null? books.map(book => (
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <svg class="bd-placeholder-img" width="140" height="170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-                            <div className="book-short">
-                                <h2 class="fw-normal fs-5 my-3">{book.title}</h2>
-                                {book.authors.map(a =>(
-                                    <p class="details-company">{a.name}</p>
-                                    ))}
-                            </div>
-                            <p><Link to={`/books/${book.id}`} class="btn btn-secondary">Read &raquo;</Link></p>
-                        </div>
                                 
-                    )): (<div>Loading...</div>)} 
+                                            <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-5"  key = {book.id}>
+                                            <Link to={`/books/${book.id}`} >
+                                            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                                            <div className="book-short">
+                                                <h2 class="fw-normal fs-5 my-3 text-black">{book.title}</h2>
+                                                {book.authors.map(a =>(
+                                                    <p class="details-company">{a.name}</p>
+                                                ))}
+                                                </div>
+                                            </Link>
+                                            </div>
+                                            
+                                 
+                                                     )): (<div>Loading...</div>)} 
                 </div>
 
             </div>
@@ -65,17 +68,17 @@ export default function BookList({ selectedCategory}) {
                 <hr></hr>
                 <div class="row justify-content-center">
                     {filteredBooks !== null? filteredBooks.map(book => (
-                        <div class="col-lg-3 col-md-4 col-sm-12 mb-5 ">
-                            <svg class="bd-placeholder-img" width="140" height="170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-                            <div className="book-short">
-                                <h2 class="fw-normal fs-5 my-3">{book.title}</h2>
-                                {book.authors.map(a =>(
-                                    <p class="details-company">{a.name}</p>
-                                    ))}
-                            </div>
-                            <p><Link to={`/books/${book.id}`} class="btn btn-secondary" >Read &raquo;</Link></p>
-                        </div>
-                                
+                        <div class="col-lg-4 col-md-6 col-sm-12 text-center mb-5"  key = {book.id}>
+                                                <Link to={`/books/${book.id}`} >
+                                                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                                                <div className="book-short">
+                                                    <h2 class="fw-normal fs-5 my-3 text-black">{book.title}</h2>
+                                                    {book.authors.map(a =>(
+                                                        <p class="details-company">{a.name}</p>
+                                                    ))}
+                                                    </div>
+                                                </Link>
+                                                </div>
                     )): (<div>Loading...</div>)} 
                 </div>
             </div>

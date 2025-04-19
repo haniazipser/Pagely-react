@@ -1,0 +1,17 @@
+.logoLogin{
+    height: 100px;
+}
+
+.button{
+    background-color: black;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px;
+    width: 100px;
+    border:0px;
+  }

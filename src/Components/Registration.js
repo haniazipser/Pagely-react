@@ -157,7 +157,7 @@ const RegistrationForm = () => {
                     name="accountNumber"
                     className="form-control"
                     onChange={handleChange}
-                    required
+                    
                   />
                 </div>
     
@@ -168,7 +168,7 @@ const RegistrationForm = () => {
                     name="accountHolder"
                     className="form-control"
                     onChange={handleChange}
-                    required
+              
                   />
                 </div>
     
@@ -194,7 +194,7 @@ const RegistrationForm = () => {
                   />
                 </div>
     
-                <button type="submit" className="text-centered button">
+                <button type="submit" class="text-centered button w-100">
                   Register
                 </button>
               </>

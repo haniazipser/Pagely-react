@@ -3,6 +3,7 @@ import { CartContext } from "../context/cart";
 import axios from "axios";
 import ShippingMethods from "./ShippingMethods";
 import { Link } from "react-router-dom";
+import '../Styles/Offers.css';
 export default function CartContent() {
     const { order, removeFromCart } = useContext(CartContext);
     
